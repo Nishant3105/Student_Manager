@@ -1,0 +1,65 @@
+.studentList {
+    margin: 2rem auto;
+    width: 90%;
+    max-width: 40rem;
+    background-color: aquamarine;
+}
+
+.studentList ul {
+    list-style: none;
+    text-align: center;
+    font-weight: bold;
+    padding: 1rem;
+}
+
+.studentList li {
+    border: 1px solid #ccc;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    text-align: center;
+    background-color: white;
+}
+
+.actions {
+    text-align: right;
+}
+
+.actions button {
+    font: inherit;
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid black;
+    padding: 0.5rem 2rem;
+    border-radius: 25px;
+    margin-left: 1rem;
+}
+
+.actions .button--remove:hover,
+.actions .button--remove:active {
+    background-color: palevioletred;
+    border-color: #5a1a01;
+    color: white;
+}
+
+.actions .button--add:hover,
+.actions .button--add:active {
+    background-color: palegreen;
+    border-color: #5a1a01;
+    color: white;
+}
+
+.actions .button--add {
+    background-color: darkgreen;
+    color:azure;
+    border-radius: 0px;
+}
+.actions .button--remove {
+    background-color: darkred;
+    color:azure;
+    border-radius: 0px;
+}
+
+
+
+
+

@@ -1,0 +1,56 @@
+.input {
+    margin: 2rem auto;
+    padding: 1rem;
+    width: 90%;
+    max-width: 40rem;
+}
+
+.input label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.input input {
+    font: inherit;
+    display: block;
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 0.15rem;
+    margin-bottom: 0.5rem;
+}
+
+.input input:focus {
+    outline: none;
+    border-color: #4f005f;
+}
+
+.input div {
+    text-align: end;
+}
+
+.input div button {
+    font: inherit;
+    border: 1px solid #4f005f;
+    background: #4f005f;
+    color: white;
+    padding: 0.25rem 1rem;
+    cursor: pointer;
+    margin-left: 0.5rem;
+} 
+
+.input div .button--add:hover,
+.input div .button--add:active {
+    background: palegreen;
+    border-color: #741188;
+}
+
+.input div .button--close:hover:hover,
+.input div .button--close:active:active {
+    background-color: palevioletred;
+    border-color: #741188;
+}
+
+.input button:focus {
+    outline: none;
+} 

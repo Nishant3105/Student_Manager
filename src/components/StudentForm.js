@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import Modal from './Modal';
 import StudentContext from '../context/studentContext';
+import classes from './StudentForm.module.css'
 
 const StudentForm = (props) => {
     const studentCtx = useContext(StudentContext);
@@ -34,7 +35,7 @@ const StudentForm = (props) => {
 
     return (
         <Modal onClick={props.onClose}>
-            <div>
+            <div className={classes.input}> 
                 <form>
                     <label htmlFor="id">Id</label>
                     <input id="id" type="number" name="id" value={formData.id} onChange={handleChange} />
@@ -44,8 +45,10 @@ const StudentForm = (props) => {
                     <input id="mobile" type="number" name="mobile" value={formData.mobile} onChange={handleChange} />
                     <label htmlFor="address">Address</label>
                     <input id="address" type="text" name="address" value={formData.address} onChange={handleChange} />
-                    <button onClick={addStudentHandler}> Add </button>
-                    <button onClick={props.onClose}> Close </button>
+                    <div>
+                        <button className={classes['button--add']} onClick={addStudentHandler}> Add </button>
+                        <button className={classes['button--close']} onClick={props.onClose}> Close </button>
+                    </div>
                 </form>
             </div>
         </Modal>
