@@ -1,24 +1,35 @@
-import logo from './logo.svg';
+import React, {useState, useCallback} from 'react'
+import StudentContextProvider from './context/studentContextProvider';
+import StudentForm from './components/StudentForm';
+import StudentList from './components/StudentList';
+import NumberOfStudent from './components/NumberOfStudent';
 import './App.css';
 
-function App() {
+
+function App(props) {
+  const [showStudentForm, setShowStudentForm] = useState(false)
+
+  console.log('app.js is reevaluated')
+
+  const showFormHandler=useCallback((e)=>{
+    e.preventDefault()
+    console.log("reahed on show handler in app.js")
+    setShowStudentForm((prevState)=>!prevState)
+  },[]) 
+
+  const onClose=useCallback(()=>{
+    setShowStudentForm((prevState)=>!prevState)
+    console.log("reahed on close handler in app.js")
+  },[])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <StudentContextProvider>
+        {showStudentForm && <StudentForm onClose={onClose}/>}
+      <h1>Student Manager</h1>
+      <NumberOfStudent/>
+      <button onClick={showFormHandler}>Add New Student</button>
+      <StudentList onClick={showFormHandler}/>
+    </StudentContextProvider>
   );
 }
 
